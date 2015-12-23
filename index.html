@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cn1-Codescan by shannah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Cn1-Codescan</h1>
+      <h2 class="project-tagline">QR Code and Bar code scanning support for Codename One</h2>
+      <a href="https://github.com/shannah/cn1-codescan" class="btn">View on GitHub</a>
+      <a href="https://github.com/shannah/cn1-codescan/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shannah/cn1-codescan/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="codename-one-codescanner-library" class="anchor" href="#codename-one-codescanner-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Codename One CodeScanner Library</h1>
+
+<p>This library provides code scanning (QR code and Bar code) support for Codename One.  This comprises a refactoring of the <code>com.codename1.codescan</code> package into a separate cn1lib so that only applications that require this feature need include it.  The codescan package in the core Codename One library will be deprecated in the future, and this library will be the officially supported method of code scanning in Codename One.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Apache 2.0</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Scan QR Codes with device camera</li>
+<li>Scan Bar Codes with device camera</li>
+</ul>
+
+<h2>
+<a id="supported-platforms" class="anchor" href="#supported-platforms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Platforms</h2>
+
+<p>This library currently is implemented on Android and iOS.  Use <code>CodeScanner.isSupported()</code> to find out if it is supported on the current platform.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Copy <a href="https://github.com/shannah/cn1-codescan/raw/master/cn1-codescan.cn1lib">cn1-codescan.cn1lib</a> into your project's "lib" directory and refresh libs.</p>
+
+<h2>
+<a id="usage-example" class="anchor" href="#usage-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage Example</h2>
+
+<p>Scanning QR Code:</p>
+
+<pre><code>...
+import com.codename1.ext.codescan.CodeScanner;
+import com.codename1.ext.codescan.ScanResult;
+...
+
+    CodeScanner.getInstance().scanQRCode(new ScanResult() {
+
+        public void scanCompleted(String contents, String formatName, byte[] rawBytes) {
+            //barCode.setText("Bar: " + contents);
+            cnt.addComponent(new Label(contents));
+            cnt.revalidate();
+        }
+
+        public void scanCanceled() {
+            System.out.println("cancelled");
+        }
+
+        public void scanError(int errorCode, String message) {
+            System.out.println("err " + message);
+        }
+    });
+</code></pre>
+
+<p>Scanning Bar Code:</p>
+
+<pre><code>...
+import com.codename1.ext.codescan.CodeScanner;
+import com.codename1.ext.codescan.ScanResult;
+...
+
+    CodeScanner.getInstance().scanBarCode(new ScanResult() {
+
+        public void scanCompleted(String contents, String formatName, byte[] rawBytes) {
+            //barCode.setText("Bar: " + contents);
+            cnt.addComponent(new Label(contents));
+            cnt.revalidate();
+        }
+
+        public void scanCanceled() {
+            System.out.println("cancelled");
+        }
+
+        public void scanError(int errorCode, String message) {
+            System.out.println("err " + message);
+        }
+    });   
+</code></pre>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<ul>
+<li><a href="http://shannah.github.io/cn1-codescan/javadoc/index.html">Javadocs</a></li>
+</ul>
+
+<h2>
+<a id="building-from-source" class="anchor" href="#building-from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building From Source</h2>
+
+<pre><code>$ git clone https://github.com/shannah/cn1-codescan.git
+$ cd cn1-codescan
+$ ant -f configure.xml
+$ ant jar
+</code></pre>
+
+<p>You'll find <code>cn1-codescan.cn1lib</code> inside the <code>dist</code> directory.</p>
+
+<p>NOTE:  The <code>ant -f configure.xml</code> is only necessary the first time you build the source.  It will download some dependencies
+like JavaSE.jar, CodenameOne.jar, etc.. that were not included with this repository to save space.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shannah/cn1-codescan">Cn1-Codescan</a> is maintained by <a href="https://github.com/shannah">shannah</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
