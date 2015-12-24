@@ -10,6 +10,7 @@
 #import "ScanCodeImplExt.h"
 #import "CodenameOne_GLViewController.h"
 #include "com_codename1_impl_ios_IOSImplementation.h"
+#import "com_codename1_ext_codescan_CodeScanner.h"
 #include "xmlvm.h"
 
 
@@ -32,7 +33,8 @@
         
         // ADD: dismiss the controller (NB dismiss from the *reader*!)
         [reader dismissModalViewControllerAnimated: YES];
-        com_codename1_ext_codescan_CodeScanner_scanCompletedCallback___java_lang_String_java_lang_String_byte_1ARRAY((CN1_THREAD_GET_STATE_PASS_ARG fromNSString(CN1_THREAD_GET_STATE_PASS_ARG symbol.data), fromNSString(CN1_THREAD_GET_STATE_PASS_ARG symbol.typeName), JAVA_NULL);
+    
+        com_codename1_ext_codescan_CodeScanner_scanCompletedCallback___java_lang_String_java_lang_String_byte_1ARRAY(CN1_THREAD_GET_STATE_PASS_ARG fromNSString(CN1_THREAD_GET_STATE_PASS_ARG symbol.data), fromNSString(CN1_THREAD_GET_STATE_PASS_ARG symbol.typeName), JAVA_NULL);
         //com_codename1_impl_ios_IOSImplementation_scanCompleted___java_lang_String_java_lang_String(CN1_THREAD_GET_STATE_PASS_ARG fromNSString(CN1_THREAD_GET_STATE_PASS_ARG symbol.data), fromNSString(CN1_THREAD_GET_STATE_PASS_ARG symbol.typeName));
 }
 #endif

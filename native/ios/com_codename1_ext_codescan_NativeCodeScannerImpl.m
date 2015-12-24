@@ -1,5 +1,6 @@
 #import "com_codename1_ext_codescan_NativeCodeScannerImpl.h"
 #import "ScanCodeImplExt.h"
+#import "CodenameOne_GLViewController.h"
 
 @implementation com_codename1_ext_codescan_NativeCodeScannerImpl
 
