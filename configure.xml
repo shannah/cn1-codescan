@@ -4,6 +4,8 @@
 <project name="cn1-codescan Configuration" default="configure" basedir=".">
     <description>Configures the dependencies in this project</description>
     <target name="configure" description="Configures the dependencies">
+        <mkdir dir="lib"/>
+        <mkdir dir="cn1-codescan-lib-template/lib"/>
         <get src="https://github.com/shannah/binaries/raw/master/cn1-common/CLDC11.jar" dest="lib/CLDC11.jar" skipexisting="true"/>
         <copy file="lib/CLDC11.jar" tofile="cn1-codescan-lib-template/lib/CLDC11.jar"/>
         <get skipexisting="true" src="https://github.com/shannah/binaries/raw/master/cn1-common/CodeNameOneBuildClient.jar" dest="CodeNameOneBuildClient.jar"/>
