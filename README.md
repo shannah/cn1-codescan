@@ -14,7 +14,15 @@ Apache 2.0
 
 ## Supported Platforms
 
-This library currently is implemented on Android and iOS.  Use `CodeScanner.isSupported()` to find out if it is supported on the current platform.
+Use `CodeScanner.isSupported()` to find out if it is supported on the current platform.
+
+* iOS - Supported and tested
+* Android - Supported and tested
+* Simulator - Not supported yet
+* Javascript - Not supported yet
+* RIM - Implemented but not tested
+* WinPhone - Not supported yet
+* J2ME - Implemented but not tested
 
 ## Installation
 
